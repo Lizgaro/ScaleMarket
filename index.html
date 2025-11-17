@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+
+<html lang="ru" class="scroll-smooth">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Партнер по Росту AI-стартапов | ScaleX Market</title>
+
+    
+
+    <!-- Подключение Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+
+    
+
+    <!-- Подключение шрифтов --><link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+
+    <style>
+
+        /* Применение шрифтов */
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+            background-color: #0a0a0a; /* Очень темный фон */
+
+            color: #e5e5e5; /* Светло-серый текст */
+
+            overflow-x: hidden; /* Предотвращаем горизонтальный скролл из-за "авроры" */
+
+            cursor: none; /* Кастомный курсор */
+
+        }
+
+        
+
+        /* Технологичные шрифты */
+
+        .font-tech {
+
+            font-family: 'JetBrains Mono', monospace;
+
+            letter-spacing: 0.05em;
+
+        }
+
+        
+
+        .font-display {
+
+            font-family: 'Space Grotesk', sans-serif;
+
+            font-weight: 700;
+
+            letter-spacing: -0.02em;
+
+        }
+
+        
+
+        /* Градиент для заголовков с анимацией */
+
+        .text-gradient {
+
+            background-image: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+
+            background-size: 300% auto;
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+
+            animation: gradient-shift 8s ease infinite;
+
+        }
+
+        
+
+        @keyframes gradient-shift {
+
+            0%, 100% { background-position: 0% 50%; }
+
+            50% { background-position: 100% 50%; }
+
+        }
+
+        
+
+        /* Holographic эффект */
+
+        .holographic {
+
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%);
+
+            background-size: 400% 400%;
+
+            animation: holographic-shift 6s ease infinite;
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+
+        }
+
+        
+
+        @keyframes holographic-shift {
+
+            0%, 100% { background-position: 0% 50%; }
+
+            50% { background-position: 100% 50%; }
+
+        }
+
+
+
+        /* * ВАУ-ЭФФЕКТ 1: МАГНИТНЫЕ КНОПКИ С GLASSMORPHISM И NEON */
+
+        .cta-button {
+
+            position: relative;
+
+            display: inline-block;
+
+            padding: 1.25rem 2.5rem;
+
+            font-size: 1.125rem;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            color: #ffffff;
+
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+
+            backdrop-filter: blur(10px);
+
+            border: 2px solid transparent;
+
+            border-radius: 1rem;
+
+            overflow: hidden;
+
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2),
+
+                        0 0 0 0 rgba(59, 130, 246, 0.4),
+
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+        }
+
+        
+
+        .cta-button::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: -100%;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+
+            transition: left 0.6s;
+
+        }
+
+        
+
+        .cta-button::after {
+
+            content: '';
+
+            position: absolute;
+
+            inset: -2px;
+
+            border-radius: 1rem;
+
+            padding: 2px;
+
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+
+            background-size: 300% 300%;
+
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+
+            -webkit-mask-composite: xor;
+
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+
+            mask-composite: exclude;
+
+            opacity: 0;
+
+            transition: opacity 0.4s, background-position 0.6s;
+
+            animation: border-glow 3s ease infinite;
+
+        }
+
+        
+
+        @keyframes border-glow {
+
+            0%, 100% { background-position: 0% 50%; }
+
+            50% { background-position: 100% 50%; }
+
+        }
+
+        
+
+        .cta-button:hover {
+
+            transform: translateY(-4px) scale(1.05);
+
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4),
+
+                        0 0 30px rgba(168, 85, 247, 0.6),
+
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+        }
+
+        
+
+        .cta-button:hover::before {
+
+            left: 100%;
+
+        }
+
+        
+
+        .cta-button:hover::after {
+
+            opacity: 1;
+
+        }
+
+        
+
+        .cta-button:active {
+
+            transform: translateY(-2px) scale(1.02);
+
+        }
+
+
+
+        /* Боковые стрелки слайдера */
+
+        .slider-arrow {
+
+            position: absolute;
+
+            width: 60px;
+
+            height: 60px;
+
+            background: rgba(17, 24, 39, 0.8);
+
+            backdrop-filter: blur(10px);
+
+            border: 2px solid rgba(59, 130, 246, 0.3);
+
+            border-radius: 50%;
+
+            color: rgba(59, 130, 246, 0.9);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+            z-index: 20;
+
+            opacity: 0.7;
+
+        }
+
+        
+
+        .slider-arrow:hover {
+
+            opacity: 1;
+
+            background: rgba(59, 130, 246, 0.2);
+
+            border-color: rgba(59, 130, 246, 0.8);
+
+            transform: translateY(-50%) scale(1.15);
+
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4),
+
+                        0 0 20px rgba(59, 130, 246, 0.3);
+
+        }
+
+        
+
+        .slider-arrow:active {
+
+            transform: translateY(-50%) scale(1.05);
+
+        }
+
+        
+
+        .slider-arrow svg {
+
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+
+            transition: transform 0.3s;
+
+        }
+
+        
+
+        .slider-arrow:hover svg {
+
+            transform: scale(1.2);
+
+        }
+
+        
+
+        @media (max-width: 640px) {
+
+            .slider-arrow {
+
+                width: 50px;
+
+                height: 50px;
+
+            }
+
+        }
+
+
+
+        /* * ВАУ-ЭФФЕКТ 2: "ЖИВОЙ" ФОН (AURORA)
+
+         * Медленно вращающиеся градиентные пятна.
+
+         */
+
+        @keyframes rotate {
+
+            from { transform: rotate(0deg) scale(1); }
+
+            to { transform: rotate(360deg) scale(1.05); }
+
+        }
+
+        .aurora-blob {
+
+            position: fixed;
+
+            z-index: -10;
+
+            filter: blur(90px); /* Сильное размытие */
+
+            opacity: 0.15; /* Очень низкая непрозрачность */
+
+            animation: rotate 30s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+
+        }
+
+
+
+        /* Анимация слайдера */
+
+        .project-card-wrapper {
+
+            display: none;
+
+        }
+
+        .project-card-wrapper.active {
+
+            display: block;
+
+            animation: fadeIn 0.5s ease-in-out;
+
+        }
+
+        @keyframes fadeIn {
+
+            from { opacity: 0; transform: translateY(10px); }
+
+            to { opacity: 1; transform: translateY(0); }
+
+        }
+
+        
+
+        /* Современные карточки проектов */
+
+        .modern-card {
+
+            position: relative;
+
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+        }
+
+        
+
+        .modern-card::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            height: 2px;
+
+            background: linear-gradient(90deg, transparent, #3b82f6, #8b5cf6, transparent);
+
+            opacity: 0;
+
+            transition: opacity 0.4s;
+
+        }
+
+        
+
+        .modern-card:hover::before {
+
+            opacity: 1;
+
+        }
+
+        
+
+        .modern-card::after {
+
+            content: '';
+
+            position: absolute;
+
+            inset: 0;
+
+            border-radius: 1rem;
+
+            padding: 1px;
+
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(168, 85, 247, 0.3));
+
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+
+            -webkit-mask-composite: xor;
+
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+
+            mask-composite: exclude;
+
+            opacity: 0;
+
+            transition: opacity 0.4s;
+
+        }
+
+        
+
+        .modern-card:hover::after {
+
+            opacity: 1;
+
+        }
+
+        
+
+        .modern-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2),
+
+                        0 0 0 1px rgba(59, 130, 246, 0.1);
+
+        }
+
+        
+
+        /* Индикатор прогресса для слайдера */
+
+        .slider-indicators {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 0.5rem;
+
+            margin-top: 2rem;
+
+        }
+
+        
+
+        .slider-indicator {
+
+            width: 10px;
+
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: rgba(59, 130, 246, 0.3);
+
+            border: 2px solid rgba(59, 130, 246, 0.5);
+
+            cursor: pointer;
+
+            transition: all 0.3s;
+
+        }
+
+        
+
+        .slider-indicator.active {
+
+            background: rgba(59, 130, 246, 1);
+
+            width: 30px;
+
+            border-radius: 5px;
+
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+
+        }
+
+        
+
+        /* Современные badges */
+
+        .badge-modern {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            padding: 0.375rem 0.75rem;
+
+            font-size: 0.75rem;
+
+            font-weight: 600;
+
+            border-radius: 9999px;
+
+            backdrop-filter: blur(10px);
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            transition: all 0.3s;
+
+        }
+
+        
+
+        .badge-modern:hover {
+
+            transform: scale(1.05);
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+        }
+
+
+
+        /* * ВАУ-ЭФФЕКТ 3: ПРОДВИНУТЫЕ АНИМАЦИИ ПРИ ПРОКРУТКЕ */
+
+        .animate-on-scroll {
+
+            opacity: 0;
+
+            transform: translateY(50px) scale(0.95);
+
+            transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1),
+
+                        transform 1s cubic-bezier(0.23, 1, 0.32, 1),
+
+                        filter 1s cubic-bezier(0.23, 1, 0.32, 1);
+
+            transition-delay: var(--scroll-delay, 0s);
+
+            filter: blur(10px);
+
+        }
+
+        
+
+        .animate-on-scroll.is-visible {
+
+            opacity: 1;
+
+            transform: translateY(0) scale(1);
+
+            filter: blur(0);
+
+        }
+
+        
+
+        /* Магнитный эффект для карточек */
+
+        .magnetic-card {
+
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+
+        }
+
+        
+
+        /* Glitch эффект для заголовков */
+
+        @keyframes glitch {
+
+            0%, 100% {
+
+                text-shadow: 2px 0 #3b82f6, -2px 0 #ec4899;
+
+                transform: translate(0);
+
+            }
+
+            20% {
+
+                text-shadow: -2px 0 #3b82f6, 2px 0 #ec4899;
+
+                transform: translate(2px, -2px);
+
+            }
+
+            40% {
+
+                text-shadow: 2px 0 #ec4899, -2px 0 #3b82f6;
+
+                transform: translate(-2px, 2px);
+
+            }
+
+            60% {
+
+                text-shadow: -2px 0 #ec4899, 2px 0 #3b82f6;
+
+                transform: translate(2px, 2px);
+
+            }
+
+            80% {
+
+                text-shadow: 2px 0 #3b82f6, -2px 0 #ec4899;
+
+                transform: translate(-2px, -2px);
+
+            }
+
+        }
+
+        
+
+        .glitch-text:hover {
+
+            animation: glitch 0.3s infinite;
+
+        }
+
+        
+
+        /* Кастомный курсор */
+
+        .custom-cursor {
+
+            position: fixed;
+
+            width: 20px;
+
+            height: 20px;
+
+            border: 2px solid rgba(59, 130, 246, 0.8);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            transform: translate(-50%, -50%);
+
+            transition: width 0.3s, height 0.3s, border-color 0.3s;
+
+            z-index: 9999;
+
+            mix-blend-mode: difference;
+
+        }
+
+        
+
+        .custom-cursor-dot {
+
+            position: fixed;
+
+            width: 4px;
+
+            height: 4px;
+
+            background: rgba(59, 130, 246, 1);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            transform: translate(-50%, -50%);
+
+            z-index: 9999;
+
+            transition: transform 0.1s;
+
+        }
+
+        
+
+        .custom-cursor.hover {
+
+            width: 40px;
+
+            height: 40px;
+
+            border-color: rgba(236, 72, 153, 0.8);
+
+        }
+
+        
+
+        /* Particle эффект */
+
+        .particle {
+
+            position: fixed;
+
+            width: 2px;
+
+            height: 2px;
+
+            background: rgba(59, 130, 246, 0.5);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -5;
+
+            animation: float 15s infinite;
+
+        }
+
+        
+
+        @keyframes float {
+
+            0% {
+
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+
+                opacity: 0;
+
+            }
+
+            10% {
+
+                opacity: 1;
+
+            }
+
+            90% {
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+        
+
+        /* Разные типы анимаций */
+
+        .animate-fade-up {
+
+            opacity: 0;
+
+            transform: translateY(60px);
+
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+
+        }
+
+        
+
+        .animate-fade-up.is-visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+        
+
+        .animate-scale-in {
+
+            opacity: 0;
+
+            transform: scale(0.8);
+
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+        }
+
+        
+
+        .animate-scale-in.is-visible {
+
+            opacity: 1;
+
+            transform: scale(1);
+
+        }
+
+        
+
+        .animate-slide-left {
+
+            opacity: 0;
+
+            transform: translateX(-60px);
+
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+
+        }
+
+        
+
+        .animate-slide-left.is-visible {
+
+            opacity: 1;
+
+            transform: translateX(0);
+
+        }
+
+        
+
+        .animate-slide-right {
+
+            opacity: 0;
+
+            transform: translateX(60px);
+
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+
+        }
+
+        
+
+        .animate-slide-right.is-visible {
+
+            opacity: 1;
+
+            transform: translateX(0);
+
+        }
+
+        
+
+        .animate-rotate-in {
+
+            opacity: 0;
+
+            transform: rotate(-10deg) scale(0.9);
+
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+
+        }
+
+        
+
+        .animate-rotate-in.is-visible {
+
+            opacity: 1;
+
+            transform: rotate(0deg) scale(1);
+
+        }
+
+    </style>
+
+</head>
+
+<body class="antialiased">
+
+    <!-- Кастомный курсор -->
+
+    <div class="custom-cursor"></div>
+
+    <div class="custom-cursor-dot"></div>
+
+
+
+    <!-- ВАУ-ЭФФЕКТ 2: "АВРОРА" -->
+
+    <div class="aurora-container pointer-events-none">
+
+        <div class="aurora-blob w-[800px] h-[800px] bg-blue-600 rounded-full -top-96 -left-96"></div>
+
+        <div class="aurora-blob w-[700px] h-[700px] bg-purple-600 rounded-full -bottom-80 -right-80" style="animation-duration: 40s; animation-delay: 5s;"></div>
+
+        <div class="aurora-blob w-[500px] h-[500px] bg-indigo-500 rounded-full top-1/2 left-1/3" style="animation-duration: 25s;"></div>
+
+    </div>
+
+    
+
+    <!-- Particle эффект -->
+
+    <div id="particles-container" class="pointer-events-none"></div>
+
+
+
+    <!-- ScaleX Market Header --><div class="bg-gray-900/50 backdrop-blur-sm py-4 text-center border-b border-gray-800 sticky top-0 z-50">
+
+        <h1 class="text-3xl font-extrabold text-gradient glitch-text font-display">ScaleX Market</h1>
+
+    </div>
+
+
+
+    <!-- Контейнер для всего лендинга --><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+
+        <!-- 🌎 Экран 1: Главный (Hero) --><header class="min-h-screen flex items-center justify-center text-center py-20">
+
+            <div class="animate-on-scroll" style="--scroll-delay: 100ms;">
+
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight font-display">
+
+                    Станьте <span class="text-gradient holographic">Ключевым Партнером по Росту</span> для портфеля AI-стартапов.
+
+                </h1>
+
+                <p class="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+
+                    Хватит тратить 80% времени на поиск клиентов. Получите прямой доступ к отобранным AI-фаундерам, тестируйте GTM-стратегии на реальных продуктах и зарабатывайте % от P&L без потолка.
+
+                </p>
+
+                <p class="text-lg sm:text-xl text-gray-400 mb-12">
+
+                    Мы ищем GTM-стратегов, B2B-команды и людей, готовых работать за долю в успехе (RevShare/CapShare), а не за фикс.
+
+                </p>
+
+                <a href="#" class="cta-button">
+
+                    🚀 Пройти Квалификацию
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- 🌪️ Экран 2: Боль (The Pain) --><section class="py-20 sm:py-32">
+
+            <div class="text-center mb-16 animate-on-scroll">
+
+                <h2 class="text-4xl sm:text-5xl font-extrabold mb-4">Рынок в аду. Зарплата — это потолок.</h2>
+
+                <p class="text-xl sm:text-2xl text-gray-300">AI меняет правила игры, а вы все еще "пользователь", а не "стратег"?</p>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Карточка Боли 1 --><div class="bg-gray-900/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-800/50 magnetic-card hover:border-blue-500/50 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 animate-on-scroll" style="--scroll-delay: 0ms;">
+
+                    <span class="text-4xl mb-4 block">😨</span>
+
+                    <h3 class="text-2xl font-bold mb-3">FOMO (Страх отстать)</h3>
+
+                    <p class="text-gray-400">AI пишет резюме, AI их читает. Старые навыки и резюме устаревают. Работать в найме сегодня — значит отставать от главного технологического тренда.</p>
+
+                </div>
+
+                <!-- Карточка Боли 2 --><div class="bg-gray-900/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-800/50 magnetic-card hover:border-blue-500/50 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 animate-on-scroll" style="--scroll-delay: 150ms;">
+
+                    <span class="text-4xl mb-4 block">⛓️</span>
+
+                    <h3 class="text-2xl font-bold mb-3">Зарплатный Потолок</h3>
+
+                    <p class="text-gray-400">Вы уперлись в "фикс" и не можете влиять на P&L. Ваш доход ограничен, даже если вы приносите миллионы.</p>
+
+                </div>
+
+                <!-- Карточка Боли 3 --><div class="bg-gray-900/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-800/50 magnetic-card hover:border-blue-500/50 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 animate-on-scroll" style="--scroll-delay: 300ms;">
+
+                    <span class="text-4xl mb-4 block">🤯</span>
+
+                    <h3 class="text-2xl font-bold mb-3">Хаос вместо Системы</h3>
+
+                    <p class="text-gray-400">Каждый новый клиент — это хаос онбординга. Вы тратите недели на то, чтобы просто "синхронизироваться", вместо того чтобы расти.</p>
+
+                </div>
+
+                <!-- Карточка Боли 4 --><div class="bg-gray-900/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-800/50 magnetic-card hover:border-blue-500/50 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 animate-on-scroll" style="--scroll-delay: 450ms;">
+
+                    <span class="text-4xl mb-4 block"> 💸 </span> <!-- "Сырые" Клиенты --><h3 class="text-2xl font-bold mb-3">"Сырые" Клиенты</h3>
+
+                    <p class="text-gray-400">80% времени уходит на "продажи" клиентам, у которых нет ни MVP, ни бюджета, ни видения.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- 💡 Экран 3: Решение (The Solution) --><section class="py-20 sm:py-32">
+
+            <div class="text-center mb-16 max-w-3xl mx-auto animate-on-scroll">
+
+                <h2 class="text-4xl sm:text-5xl font-extrabold mb-4">Мы предлагаем нечто большее, чем работа. <span class="text-gradient">Мы предлагаем партнерство.</span></h2>
+
+                <p class="text-xl sm:text-2xl text-gray-300">
+
+                    ScaleX — это экосистема роста, вырастившая проекты на 700 млн выручки. Мы отбираем перспективные AI-стартапы, а вы — масштабируете их по нашей проверенной методологии.
+
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Карточка Решения 1 --><div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800 animate-on-scroll" style="--scroll-delay: 0ms;">
+
+                    <h3 class="text-3xl font-bold mb-4 text-gradient">1. РОСТ</h3>
+
+                    <p class="text-lg font-semibold mb-2">Прокачайте скиллы до AI GTM-Strategist</p>
+
+                    <p class="text-gray-400">Получите реальные T-shaped кейсы по выводу на рынок диверсифицированных AI-продуктов — от B2C EdTech (как SpeakyGo) до сложных B2B FinTech (как Claritech).</p>
+
+                </div>
+
+                <!-- Карточка Решения 2 --><div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800 animate-on-scroll" style="--scroll-delay: 150ms;">
+
+                    <h3 class="text-3xl font-bold mb-4 text-gradient">2. СВЯЗИ</h3>
+
+                    <p class="text-lg font-semibold mb-2">Войдите в закрытый клуб</p>
+
+                    <p class="text-gray-400">Получите прямой доступ к AI-визионерам и фаундерам (как Вероника из ChallengeLife), а не к анонимным менеджерам-посредникам. Вы работаете напрямую с носителями видения.</p>
+
+                </div>
+
+                <!-- Карточка Решения 3 --><div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800 animate-on-scroll" style="--scroll-delay: 300ms;">
+
+                    <h3 class="text-3xl font-bold mb-4 text-gradient">3. ДЕНЬГИ</h3>
+
+                    <p class="text-lg font-semibold mb-2">Управляйте P&L</p>
+
+                    <p class="text-gray-400">Забудьте об окладе. Ваш доход — это высокий revshare с роста, который вы создали. Это переход от «зарплатного потолка» к «доле в экономическом успехе».</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- 🗂️ Экран 4: Каталог Проектов --><section class="py-20 sm:py-32">
+
+            <div class="text-center mb-16 animate-on-scroll">
+
+                <h2 class="text-4xl sm:text-5xl font-extrabold mb-4">Проекты, которые ждут вашу команду</h2>
+
+                <p class="text-xl sm:text-2xl text-gray-300">Это живой каталог. Он обновляется по мере подключения новых резидентов.</p>
+
+            </div>
+
+            
+
+            <!-- Контейнер для слайдера проектов --><div class="relative max-w-2xl mx-auto animate-on-scroll">
+
+                <!-- Стрелка влево --><button id="prev-project" class="slider-arrow slider-arrow-left absolute left-0 top-1/2 -translate-y-1/2 z-10 -translate-x-4 sm:-translate-x-8 lg:-translate-x-12">
+
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+
+                    </svg>
+
+                </button>
+
+                
+
+                <div id="project-slider" class="overflow-hidden relative h-[500px] flex items-center justify-center">
+
+                <!-- Стрелка вправо --><button id="next-project" class="slider-arrow slider-arrow-right absolute right-0 top-1/2 -translate-y-1/2 z-10 translate-x-4 sm:translate-x-8 lg:translate-x-12">
+
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+
+                    </svg>
+
+                </button>
+
+                    
+
+                    <!-- Карточка 1: SpeakyGo --><div class="project-card-wrapper absolute w-full active">
+
+                        <div class="modern-card bg-gray-900/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-gray-800/50 flex flex-col h-full relative overflow-hidden group">
+
+                            <h3 class="text-2xl font-bold mb-2">SpeakyGo <span class="badge-modern bg-blue-600/80 text-white ml-2">#b2c</span></h3>
+
+                            <p class="text-gray-400 mb-4"><strong>Что это:</strong> AI-buddy для языковой практики, решающий проблему языкового барьера.</p>
+
+                            <p class="font-semibold mb-2">Преимущества проекта:</p>
+
+                            <ul class="list-none space-y-2 text-gray-300">
+
+                                <li>🚀 <strong>Экономика:</strong> Выручка 1,3 млн руб., окупаемость x2, высокий средний чек (2 000+).</li>
+
+                                <li>🚀 <strong>Виральность:</strong> 50% пользователей по сарафану, активные отзывы.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Карточка 2: ChallengeLife --><div class="project-card-wrapper absolute w-full">
+
+                        <div class="modern-card bg-gray-900/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-gray-800/50 flex flex-col h-full relative overflow-hidden group">
+
+                            <h3 class="text-2xl font-bold mb-2">ChallengeLife <span class="text-sm font-medium bg-blue-600 text-white px-2 py-0.5 rounded-full ml-2">#b2c</span> <span class="text-sm font-medium bg-green-600 text-white px-2 py-0.5 rounded-full">#b2b</span></h3>
+
+                            <p class="text-gray-400 mb-4"><strong>Что это:</strong> Cервис AI-челленджей (испытания, марафоны), альтернатива GetCourse.</p>
+
+                            <p class="font-semibold mb-2">Преимущества проекта:</p>
+
+                            <ul class="list-none space-y-2 text-gray-300">
+
+                                <li>🚀 <strong>Эффективность:</strong> Помогает достигать целей (эффективность с 3% до 60%).</li>
+
+                                <li>🚀 <strong>Инновационность:</strong> Легальный инструмент перелива аудитории, новая механика.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Карточка 3: Find The Job --><div class="project-card-wrapper absolute w-full">
+
+                        <div class="modern-card bg-gray-900/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-gray-800/50 flex flex-col h-full relative overflow-hidden group">
+
+                            <h3 class="text-2xl font-bold mb-2">Find The Job <span class="text-sm font-medium bg-blue-600 text-white px-2 py-0.5 rounded-full ml-2">#b2c</span> <span class="text-sm font-medium bg-green-600 text-white px-2 py-0.5 rounded-full">#b2b</span></h3>
+
+                            <p class="text-gray-400 mb-4"><strong>Что это:</strong> Поиск работы и сотрудников с помощью ИИ.</p>
+
+                            <p class="font-semibold mb-2">Преимущества проекта:</p>
+
+                            <ul class="list-none space-y-2 text-gray-300">
+
+                                <li>🚀 <strong>Масштаб:</strong> 4,5 млн резюме, 15 B2B-клиентов (лидеры рынка).</li>
+
+                                <li>🚀 <strong>Признание:</strong> Топ-100 Альфа-Банка, 10 млн инвестиций.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Карточка 4: SciArticle --><div class="project-card-wrapper absolute w-full">
+
+                        <div class="modern-card bg-gray-900/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-gray-800/50 flex flex-col h-full relative overflow-hidden group">
+
+                            <h3 class="text-2xl font-bold mb-2">SciArticle <span class="text-sm font-medium bg-green-600 text-white px-2 py-0.5 rounded-full ml-2">#b2b</span></h3>
+
+                            <p class="text-gray-400 mb-4"><strong>Что это:</strong> AI-аналитика и автоматические бизнес-отчёты для B2B (венчур, фонды, бизнес).</p>
+
+                            <p class="font-semibold mb-2">Преимущества проекта:</p>
+
+                            <ul class="list-none space-y-2 text-gray-300">
+
+                                <li>🚀 <strong>Масштаб:</strong> 19 000+ публикаций, 30 000+ клиентов.</li>
+
+                                <li>🚀 <strong>Экономика:</strong> Маржа до 90%, цена ниже аналогов.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Карточка 5: Metadoor-dev --><div class="project-card-wrapper absolute w-full">
+
+                        <div class="modern-card bg-gray-900/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-gray-800/50 flex flex-col h-full relative overflow-hidden group">
+
+                            <h3 class="text-2xl font-bold mb-2">Metadoor-dev <span class="text-sm font-medium bg-green-600 text-white px-2 py-0.5 rounded-full ml-2">#b2b</span></h3>
+
+                            <p class="text-gray-400 mb-4"><strong>Что это:</strong> Финмодели и прогнозы для B2B (аналог "Aladdin" от BlackRock).</p>
+
+                            <p class="font-semibold mb-2">Преимущества проекта:</p>
+
+                            <ul class="list-none space-y-2 text-gray-300">
+
+                                <li>🚀 <strong>Выручка:</strong> 6-12 млн руб. в год.</li>
+
+                                <li>🚀 <strong>Ценность:</strong> Снижает ~20% потерь, повышает прозрачность.</li>
+
+                                <li>🚀 <strong>Признание:</strong> Участник G20 MSME Challenge.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Карточка 6: Claritech --><div class="project-card-wrapper absolute w-full">
+
+                        <div class="modern-card bg-gray-900/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-gray-800/50 flex flex-col h-full relative overflow-hidden group">
+
+                            <h3 class="text-2xl font-bold mb-2">Claritech <span class="text-sm font-medium bg-green-600 text-white px-2 py-0.5 rounded-full ml-2">#b2b</span></h3>
+
+                            <p class="text-gray-400 mb-4"><strong>Что это:</strong> Контроль и анализ расходов для B2B (для компаний с выручкой от 100 млн+).</p>
+
+                            <p class="font-semibold mb-2">Преимущества проекта:</p>
+
+                            <ul class="list-none space-y-2 text-gray-300">
+
+                                <li>🚀 <strong>Высокий чек:</strong> Внедрение — от 2 млн руб.</li>
+
+                                <li>🚀 <strong>Экспертиза:</strong> Основатель — экс-финдиректор топ-банков.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Карточка 7: Мяудза --><div class="project-card-wrapper absolute w-full">
+
+                        <div class="modern-card bg-gray-900/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-gray-800/50 flex flex-col h-full relative overflow-hidden group">
+
+                            <h3 class="text-2xl font-bold mb-2">Мяудза <span class="text-sm font-medium bg-green-600 text-white px-2 py-0.5 rounded-full ml-2">#b2b</span> <span class="text-sm font-medium bg-blue-600 text-white px-2 py-0.5 rounded-full">#b2c-малый</span></h3>
+
+                            <p class="text-gray-400 mb-4"><strong>Что это:</strong> Командный чат и трекер задач (конкурент Slack/Trello).</p>
+
+                            <p class="font-semibold mb-2">Преимущества проекта:</p>
+
+                            <ul class="list-none space-y-2 text-gray-300">
+
+                                <li>🚀 <strong>Traction:</strong> 2000 пользователей, награды продукта.</li>
+
+                                <li>🚀 <strong>Потенциал:</strong> Шанс на инвестиции от ФРИИ.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Карточка 8: SkyPay --><div class="project-card-wrapper absolute w-full">
+
+                        <div class="modern-card bg-gray-900/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-gray-800/50 flex flex-col h-full relative overflow-hidden group">
+
+                            <h3 class="text-2xl font-bold mb-2">SkyPay <span class="text-sm font-medium bg-yellow-500 text-white px-2 py-0.5 rounded-full ml-2">#fintech</span></h3>
+
+                            <p class="text-gray-400 mb-4"><strong>Что это:</strong> Карта, где крипта работает законно как обычные деньги.</p>
+
+                            <p class="font-semibold mb-2 text-yellow-400">Преимущества проекта (данные скоро подтянем):</p>
+
+                            <ul class="list-none space-y-2 text-gray-300">
+
+                                <li>✨ <strong>Инновация:</strong> Легализация крипты для повседневных расчетов.</li>
+
+                                <li>✨ <strong>Потенциал:</strong> Огромный спрос на рынке криптовалют.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div id="slider-indicators" class="slider-indicators"></div>
+
+            </div>
+
+        </section>
+
+        
+
+        <!-- ⚙️ Экран 5: Как это работает --><section class="py-20 sm:py-32">
+
+            <div class="text-center mb-16 max-w-3xl mx-auto animate-on-scroll">
+
+                <h2 class="text-4xl sm:text-5xl font-extrabold mb-4">От заявки до старта за 7 дней</h2>
+
+                <p class="text-xl sm:text-2xl text-gray-300">Мы ценим ваше время. Наш онбординг — это 7-дневный спринт-сертификация по методологии ScaleX.</p>
+
+            </div>
+
+            
+
+            <!-- Процесс онбординга --><div class="relative max-w-2xl mx-auto animate-on-scroll">
+
+                <!-- Вертикальная линия --><div class="absolute left-4 top-0 h-full w-0.5 bg-gray-700" aria-hidden="true"></div>
+
+                
+
+                <div class="space-y-12">
+
+                    <!-- Шаг 1 --><div class="relative pl-12 animate-on-scroll" style="--scroll-delay: 0ms;">
+
+                        <div class="absolute left-0 top-1 flex items-center justify-center w-8 h-8 bg-blue-600 rounded-full text-white font-bold">1</div>
+
+                        <h3 class="text-2xl font-bold mb-2">Подаете Заявку (Квалификация)</h3>
+
+                        <p class="text-gray-400">Вы заполняете анкету в боте. Мы отсеиваем 90% "искателей оклада".</p>
+
+                    </div>
+
+                    <!-- Шаг 2 --><div class="relative pl-12 animate-on-scroll" style="--scroll-delay: 150ms;">
+
+                        <div class="absolute left-0 top-1 flex items-center justify-center w-8 h-8 bg-blue-600 rounded-full text-white font-bold">2</div>
+
+                        <h3 class="text-2xl font-bold mb-2">Проходите Спринт (Сертификация)</h3>
+
+                        <p class="text-gray-400">Вы получаете доступ к нашему 7-дневному челленджу. Вы изучаете наш метод, выбираете пилотный проект и готовите по нему GTM-стратегию.</p>
+
+                    </div>
+
+                    <!-- Шаг 3 --><div class="relative pl-12 animate-on-scroll" style="--scroll-delay: 300ms;">
+
+                        <div class="absolute left-0 top-1 flex items-center justify-center w-8 h-8 bg-blue-600 rounded-full text-white font-bold">3</div>
+
+                        <h3 class="text-2xl font-bold mb-2">Защищаете Стратегию (Брифинг)</h3>
+
+                        <p class="text-gray-400">Вы (лид команды) встречаетесь с нами (@kostya_fun) и фаундером проекта. Вы защищаете свою стратегию и утверждаете KPI.</p>
+
+                    </div>
+
+                    <!-- Шаг 4 --><div class="relative pl-12 animate-on-scroll" style="--scroll-delay: 450ms;">
+
+                        <div class="absolute left-0 top-1 flex items-center justify-center w-8 h-8 bg-blue-600 rounded-full text-white font-bold">4</div>
+
+                        <h3 class="text-2xl font-bold mb-2">Начинаете Работу (Активация)</h3>
+
+                        <p class="text-gray-400">Вы подписываете партнерское соглашение с проектом на RevShare/CapShare и начинаете работать, сдавая еженедельные отчеты @KatirinBo.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- 🛡️ Экран 6: Гарантии / Работа с возражениями --><section class="py-20 sm:py-32">
+
+            <div class="max-w-4xl mx-auto bg-gray-900/80 backdrop-blur-md p-8 sm:p-12 rounded-xl shadow-lg border border-gray-800 animate-on-scroll">
+
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 text-center">"Это работа 'за процент'?"</h2>
+
+                <p class="text-xl sm:text-2xl text-center text-gray-300 mb-8">
+
+                    <strong>Нет.</strong> Работа "за процент" — это когда вы привели лида и получили 5% комиссии.
+
+                    <br><br>
+
+                    <span class="text-gradient font-bold">Партнерство</span> — это когда вы управляете P&L и получаете 30-50% от всей прибыли, которую сгенерировала ваша команда.
+
+                </p>
+
+                
+
+                <div class="bg-gray-800 p-6 sm:p-8 rounded-lg border border-blue-500 shadow-inner">
+
+                    <h3 class="text-2xl font-bold mb-4 text-center text-blue-300">Наша Гарантия</h3>
+
+                    <p class="text-center text-gray-400 mb-6">Мы не можем гарантировать, что каждый стартап станет "единорогом". Но мы гарантируем, что даже если пилотный проект не взлетит, вы бесплатно получите:</p>
+
+                    <ul class="space-y-3 list-inside">
+
+                        <li class="flex items-start">
+
+                            <svg class="w-6 h-6 text-blue-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                            <span>Новый, сильный кейс по масштабированию AI-стартапа в портфолио.</span>
+
+                        </li>
+
+                        <li class="flex items-start">
+
+                            <svg class="w-6 h-6 text-blue-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                            <span>Полный доступ к нашей методологии роста и базе знаний.</span>
+
+                        </li>
+
+                        <li class="flex items-start">
+
+                            <svg class="w-6 h-6 text-blue-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+
+                            <span>Прямые связи в закрытой экосистеме фаундеров и инвесторов.</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- 🏁 Экран 7: Финальный CTA --><section class="py-20 sm:py-32 text-center">
+
+            <div class="animate-on-scroll">
+
+                <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 max-w-3xl mx-auto">Готовы управлять ростом AI-стартапов?</h2>
+
+                <p class="text-xl sm:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
+
+                    Мы не ищем резюме. Мы ищем GTM-стратегов, готовых к новым условиям. Пройдите квалификацию, чтобы получить доступ к проектам и личному звонку с основателем.
+
+                </p>
+
+                <a href="#" class="cta-button">
+
+                    🚀 Пройти Квалификацию
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Футер --><footer class="text-center py-10 border-t border-gray-800">
+
+            <p class="text-gray-500">&copy; 2025 ScaleX. Все права защищены.</p>
+
+        </footer>
+
+
+
+    </div>
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            
+
+            // --- КАСТОМНЫЙ КУРСОР ---
+
+            const cursor = document.querySelector('.custom-cursor');
+
+            const cursorDot = document.querySelector('.custom-cursor-dot');
+
+            let mouseX = 0, mouseY = 0;
+
+            let cursorX = 0, cursorY = 0;
+
+            let dotX = 0, dotY = 0;
+
+            
+
+            document.addEventListener('mousemove', (e) => {
+
+                mouseX = e.clientX;
+
+                mouseY = e.clientY;
+
+            });
+
+            
+
+            function animateCursor() {
+
+                // Плавное движение основного курсора
+
+                cursorX += (mouseX - cursorX) * 0.1;
+
+                cursorY += (mouseY - cursorY) * 0.1;
+
+                cursor.style.left = cursorX + 'px';
+
+                cursor.style.top = cursorY + 'px';
+
+                
+
+                // Быстрое движение точки
+
+                dotX += (mouseX - dotX) * 0.3;
+
+                dotY += (mouseY - dotY) * 0.3;
+
+                cursorDot.style.left = dotX + 'px';
+
+                cursorDot.style.top = dotY + 'px';
+
+                
+
+                requestAnimationFrame(animateCursor);
+
+            }
+
+            animateCursor();
+
+            
+
+            // Эффект при наведении на интерактивные элементы
+
+            if (cursor) {
+
+                const interactiveElements = document.querySelectorAll('a, button, .magnetic-card');
+
+                interactiveElements.forEach(el => {
+
+                    el.addEventListener('mouseenter', () => {
+
+                        cursor.classList.add('hover');
+
+                    });
+
+                    el.addEventListener('mouseleave', () => {
+
+                        cursor.classList.remove('hover');
+
+                    });
+
+                });
+
+            }
+
+            
+
+            // --- МАГНИТНЫЙ ЭФФЕКТ ДЛЯ КАРТОЧЕК ---
+
+            const magneticCards = document.querySelectorAll('.magnetic-card');
+
+            magneticCards.forEach(card => {
+
+                card.addEventListener('mousemove', (e) => {
+
+                    const rect = card.getBoundingClientRect();
+
+                    const x = e.clientX - rect.left - rect.width / 2;
+
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    const distance = Math.sqrt(x * x + y * y);
+
+                    const maxDistance = 150;
+
+                    const strength = Math.min(distance / maxDistance, 1);
+
+                    const moveX = (x / maxDistance) * 20 * (1 - strength);
+
+                    const moveY = (y / maxDistance) * 20 * (1 - strength);
+
+                    card.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+
+                });
+
+                
+
+                card.addEventListener('mouseleave', () => {
+
+                    card.style.transform = 'translate(0, 0) scale(1)';
+
+                });
+
+            });
+
+            
+
+            // --- МАГНИТНЫЙ ЭФФЕКТ ДЛЯ КНОПОК ---
+
+            const ctaButtons = document.querySelectorAll('.cta-button');
+
+            ctaButtons.forEach(button => {
+
+                button.addEventListener('mousemove', (e) => {
+
+                    const rect = button.getBoundingClientRect();
+
+                    const x = e.clientX - rect.left - rect.width / 2;
+
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) translateY(-4px) scale(1.05)`;
+
+                });
+
+                
+
+                button.addEventListener('mouseleave', () => {
+
+                    button.style.transform = 'translate(0, 0) scale(1)';
+
+                });
+
+            });
+
+            
+
+            // --- PARTICLE ЭФФЕКТ ---
+
+            const particlesContainer = document.getElementById('particles-container');
+
+            function createParticle() {
+
+                const particle = document.createElement('div');
+
+                particle.className = 'particle';
+
+                particle.style.left = Math.random() * 100 + '%';
+
+                particle.style.animationDelay = Math.random() * 15 + 's';
+
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+
+                particlesContainer.appendChild(particle);
+
+                
+
+                setTimeout(() => {
+
+                    particle.remove();
+
+                }, 20000);
+
+            }
+
+            
+
+            // Создаем частицы каждые 2 секунды
+
+            setInterval(createParticle, 2000);
+
+            for (let i = 0; i < 10; i++) {
+
+                setTimeout(() => createParticle(), i * 200);
+
+            }
+
+            
+
+            // --- ЛОГИКА ДЛЯ СЛАЙДЕРА ПРОЕКТОВ ---
+
+            const projectCards = document.querySelectorAll('.project-card-wrapper');
+
+            let currentIndex = 0;
+
+            
+
+            // Создание индикаторов прогресса
+
+            const indicatorsContainer = document.getElementById('slider-indicators');
+
+            projectCards.forEach((_, index) => {
+
+                const indicator = document.createElement('div');
+
+                indicator.className = 'slider-indicator';
+
+                if (index === 0) indicator.classList.add('active');
+
+                indicator.addEventListener('click', () => {
+
+                    currentIndex = index;
+
+                    showProject(currentIndex);
+
+                    updateIndicators();
+
+                });
+
+                indicatorsContainer.appendChild(indicator);
+
+            });
+
+            
+
+            function updateIndicators() {
+
+                const indicators = document.querySelectorAll('.slider-indicator');
+
+                indicators.forEach((indicator, index) => {
+
+                    if (index === currentIndex) {
+
+                        indicator.classList.add('active');
+
+                    } else {
+
+                        indicator.classList.remove('active');
+
+                    }
+
+                });
+
+            }
+
+
+
+            function showProject(index) {
+
+                if (projectCards.length === 0) return;
+
+                
+
+                // Ограничиваем индекс
+
+                if (index < 0) index = projectCards.length - 1;
+
+                if (index >= projectCards.length) index = 0;
+
+                
+
+                currentIndex = index;
+
+                
+
+                // Убираем active со всех карточек
+
+                projectCards.forEach((card) => {
+
+                    card.classList.remove('active');
+
+                });
+
+                
+
+                // Добавляем active к текущей карточке
+
+                if (projectCards[index]) {
+
+                    projectCards[index].classList.add('active');
+
+                }
+
+                
+
+                updateIndicators();
+
+                updateGradients();
+
+            }
+
+            
+
+            function updateGradients() {
+
+                const leftGradient = document.querySelector('.slider-gradient-left');
+
+                const rightGradient = document.querySelector('.slider-gradient-right');
+
+                const prevArrow = document.getElementById('prev-project');
+
+                const nextArrow = document.getElementById('next-project');
+
+                
+
+                if (!leftGradient || !rightGradient || !prevArrow || !nextArrow) return;
+
+                
+
+                // Показываем/скрываем градиенты и стрелки в зависимости от позиции
+
+                if (currentIndex === 0) {
+
+                    leftGradient.style.opacity = '0.3';
+
+                    prevArrow.style.opacity = '0.5';
+
+                } else {
+
+                    leftGradient.style.opacity = '1';
+
+                    prevArrow.style.opacity = '0.8';
+
+                }
+
+                
+
+                if (currentIndex === projectCards.length - 1) {
+
+                    rightGradient.style.opacity = '0.3';
+
+                    nextArrow.style.opacity = '0.5';
+
+                } else {
+
+                    rightGradient.style.opacity = '1';
+
+                    nextArrow.style.opacity = '0.8';
+
+                }
+
+            }
+
+
+
+            document.getElementById('prev-project').addEventListener('click', () => {
+
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : projectCards.length - 1;
+
+                showProject(currentIndex);
+
+            });
+
+
+
+            document.getElementById('next-project').addEventListener('click', () => {
+
+                currentIndex = (currentIndex < projectCards.length - 1) ? currentIndex + 1 : 0;
+
+                showProject(currentIndex);
+
+            });
+
+            
+
+            // Поддержка клавиатуры для слайдера
+
+            document.addEventListener('keydown', (e) => {
+
+                if (e.key === 'ArrowLeft') {
+
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : projectCards.length - 1;
+
+                    showProject(currentIndex);
+
+                } else if (e.key === 'ArrowRight') {
+
+                    currentIndex = (currentIndex < projectCards.length - 1) ? currentIndex + 1 : 0;
+
+                    showProject(currentIndex);
+
+                }
+
+            });
+
+
+
+            // Показать первый проект при загрузке
+
+            showProject(currentIndex);
+
+            updateGradients();
+
+
+
+            // --- ПРОДВИНУТАЯ АНИМАЦИЯ ПРИ ПРОКРУТКЕ ---
+
+            const observerOptions = {
+
+                threshold: 0.1,
+
+                rootMargin: '0px 0px -50px 0px'
+
+            };
+
+            
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('is-visible');
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            }, observerOptions);
+
+
+
+            // Наблюдаем за всеми элементами с классами анимации
+
+            document.querySelectorAll('.animate-on-scroll, .animate-fade-up, .animate-scale-in, .animate-slide-left, .animate-slide-right, .animate-rotate-in').forEach(el => {
+
+                observer.observe(el);
+
+            });
+
+            
+
+            // --- SMOOTH SCROLL С ИНЕРЦИЕЙ ---
+
+            let isScrolling = false;
+
+            let scrollTimeout;
+
+            
+
+            window.addEventListener('scroll', () => {
+
+                if (!isScrolling) {
+
+                    isScrolling = true;
+
+                    document.body.style.pointerEvents = 'none';
+
+                }
+
+                
+
+                clearTimeout(scrollTimeout);
+
+                scrollTimeout = setTimeout(() => {
+
+                    isScrolling = false;
+
+                    document.body.style.pointerEvents = 'auto';
+
+                }, 150);
+
+            }, { passive: true });
+
+            
+
+            // --- PARALLAX ЭФФЕКТ ДЛЯ AURORA ---
+
+            const auroraBlobs = document.querySelectorAll('.aurora-blob');
+
+            window.addEventListener('scroll', () => {
+
+                const scrolled = window.pageYOffset;
+
+                auroraBlobs.forEach((blob, index) => {
+
+                    const speed = 0.3 + (index * 0.1);
+
+                    const yPos = -(scrolled * speed);
+
+                    blob.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.1}deg)`;
+
+                });
+
+            }, { passive: true });
+
+            
+
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
+
